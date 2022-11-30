@@ -1,0 +1,76 @@
+body{
+	background-image:url(../img/startfield.jpg);
+	background-size: 2540px 1440px;
+
+}
+#headbox{
+	background-color:rgba(0,0,0,0); 
+	width: 100%;
+	height: 10%;
+	margin: 0;
+	padding: 0;
+	color: aliceblue;
+}
+#time{
+	width: 30%;
+	height: 100%;
+	display: inline-block;
+	font-size: 36px;
+	text-align: center; 
+	margin-left: 35%;
+	line-height: 100%;
+	padding-top: 1.5%;
+	box-sizing: border-box;
+	float: left;
+}
+#update{
+	width: 20%; 
+	height: 100%; 
+	float: left;
+	padding-top: 3%;
+	margin-left: 10%; 
+	box-sizing: border-box;
+}
+#leftbox{
+	color: aliceblue; 
+	text-align: center; 
+	background-color:rgba(0,0,0,0.2); 
+	width: 25%;
+	height: 90%;
+	display: inline-block;
+	float: left;
+	padding: 0;
+}
+#maincenter{
+	width: 50%;
+	height: 90%;
+	display: inline-block;
+	float: left;
+}
+
+#rightbox{
+	color: aliceblue;
+	width: 25%;
+	height: 90%;
+	display: inline-block;
+	float: right;
+	text-align: center;
+}
+
+#rightbox table{
+	margin:0 auto; 
+	font-size: 24px;
+	width: 90%;
+}
+#rightbox th,td{
+	line-height:60px;
+}
+.qz{
+	color: red;
+}
+.zy{
+	color: green;
+}
+.sw{
+	color: #d5d5d5;
+}

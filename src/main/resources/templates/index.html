@@ -1,10 +1,98 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th=http://www.thymeleaf.org
+      xmlns:sec=http://www.thymeleaf.org/extras/spring-security
+      xmlns:shiro=http://www.pollix.at/thymeleaf/shiro>
 <head>
-    <meta charset="UTF-8">
-    <title>这是首页</title>
+    <meta charset="utf-8" />
+    <title>首页噻</title>
+    <script src="/static/js/echarts.min.js" th:src="@{/js/echarts.min.js}"  ></script>
+    <script src="./js/china.js"  th:src="@{/js/china.js}" >  th:src="@{/js/echarts.min.js}"  </script>
+    <script src="./js/echarts-wordcloud.min.js"  th:src="@{/js/echarts-wordcloud.min.js}"></script>
+    <script src="./js/echar.js"  th:src="@{/js/echar.js}"></script>
+    <script  src="./js/getdatatime.js"  th:src="@{/js/getdatatime.js}"></script>
+    <script  src="./js/linetop.js"  th:src="@{/js/linetop.js}"></script>
+    <script  src="./js/linebottom.js"  th:src="@{/js/linebottom.js}"></script>
+    <script src="js/jquery-3.3.1.js" th:src="@{/js/jquery-3.3.1.js}"></script>
+    <link  rel="stylesheet" type="text/css"  href="./css/index.css" th:href="@{/css/index.css}">
 </head>
 <body>
-<h1>首页啊，看什么看</h1>
+<div style="width: 1920px;height: 950px;box-sizing: border-box;margin: 0 auto;">
+    <div id="headbox">
+        <div id="time">
+        </div>
+        <div id="update">
+            更新时间：</div>
+    </div>
+    <div id="leftbox">
+        <h2>全国疫情趋势图</h2>
+        <div id="linetop" style="width: 100%;height: 50%; padding: 0;"></div>
+        <h2>全国疫情风险较高地区</h2>
+        <div id="linebottom" style="width: 100%;height: 50%; padding: 0;"></div>
+    </div>
+    <div id="maincenter"></div>
+    <div id="rightbox">
+        <div>
+            <table>
+                <tr>
+                    <th></th>
+                    <th>全国疫情统计</th>
+                </tr>
+                <tr>
+                    <th class="qz">累计确诊</th>
+                    <th class="zy">累计治愈</th>
+                    <th class="sw">累计死亡</th>
+                </tr>
+                <tr>
+                    <td class="qz">222222</td>
+                    <td class="zy">11111111</td>
+                    <td class="sw">1111111</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th>今日疫情统计</th>
+
+                </tr>
+                <tr>
+                <tr>
+                    <th class="qz">新增确诊</th>
+                    <th class="zy">新增治愈</th>
+                    <th class="sw">新增死亡</th>
+                </tr>
+                <tr>
+                    <td class="qz">222222</td>
+                    <td class="zy">11111111</td>
+                    <td class="sw">1111111</td>
+                </tr>
+
+                </tr>
+            </table>
+        </div>
+        <div style="width: 100%;height: 45%;">
+            <h1>疫情小助手</h1>
+            <a href="">疫情风险等级查询</a>
+            <a href="">各地出行政策查询1</a>
+        </div>
+
+    </div>
+</div>
+<script>
+    let datas = ['2021-05', '2021-06', '2021-07', '2021-08', '2021-09', '2021-10', '2021-11', '2021-12']
+    mc();
+    lt();
+    lb();
+
+
+    window.onload = function() {
+
+        // week();
+
+        setInterval(lock);
+
+    }
+</script>
+
 </body>
+
+
+
 </html>
