@@ -1,13 +1,27 @@
-function mc() {
+function mc(result) {
+	console.log(result)
+
+
+
+	let map = new Map();
+	let list = [];
+	for (let i of result){
+		let mp = {};
+		map.set(i.provinceName,[i.nowConfirm,i.confirm,i.dead])
+		mp['name'] = i.provinceName;
+		mp['value'] = i.nowConfirm;
+		list.push(mp);
+	}
 
 				function randomData() {
+
 					return Math.round(Math.random() * 1200);
 				}
-
-				var mydata = [{
-						name: '北京',
-						value: randomData()
-					}, {
+				var mydata = list;
+				// var mydata = [{
+				// 	name: '内蒙古',
+				// 	value: {v1:123,v2:'456'}
+					/*, {
 						name: '天津',
 						value: randomData()
 					},
@@ -121,8 +135,8 @@ function mc() {
 					}, {
 						name: '澳门',
 						value: randomData()
-					}
-				];
+					}*/
+				// ];
 
 				var option = {
 					title: {
@@ -146,10 +160,12 @@ function mc() {
 						extraCssText: 'white-space:pre-wrap',
 						formatter: function(params) {
 							let nameX = params.name
-							$('#id').val();
+							// var index = $(params);
+							let values = map.get(nameX)
 							return `<div style="width: 180px;height: 180px;padding: 0;text-align: center;font-size:20px;">
 										<span>${nameX}</span>
-										<span>今日新增：${params.value}</span>
+										<span>现存病例：${values[0]}</span>
+										<span>死亡病例：${values[2]}</span>
 									</div>`
 						}
 					},

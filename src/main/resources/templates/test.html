@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-3.3.1.js" th:src="@{/js/jquery-3.3.1.js}"></script>
+</head>
+<body>
+<!--<input type="hidden" id="dataList" th:value="#{chinaHistoryList}">-->
+<input type="hidden" id="dataList" th:value="#{provincesDataList}">
+123
+
+</body>
+<!--<script th:inline="javascript">
+    var message = [[${chinaHistoryList}]];
+    var parseJSON = $.parseJSON(message);
+    console.log(message);
+    console.log(parseJSON);
+    for (var i = 0; i <parseJSON.length; i++) {
+        console.log(parseJSON[i].confirm)
+    }
+</script>-->
+<script th:inline="javascript">
+    var message = [[${provincesDataList}]];
+    var parseJSON = $.parseJSON(message);
+    console.log(parseJSON)
+
+</script>
+</html>

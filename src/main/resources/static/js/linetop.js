@@ -1,4 +1,13 @@
-function lt() {
+function lt(result) {
+	// console.log(result)
+	let dataHeal=[];
+	let dataDead=[];
+	let dataConfirm=[];
+	for (let i = 0; i < result.length; i++) {
+		dataHeal.push(result[i].heal)
+		dataDead.push(result[i].dead)
+		dataConfirm.push(result[i].confirm)
+	}
 				option = {
 					color: ['#ff0000', '#d5d5d5', '#00ff00'],
 					tooltip: {
@@ -73,20 +82,20 @@ function lt() {
 					series: [{
 							type: 'line',
 							name: '累计确诊病例',
-							symbolSize: 8,
-							data: ['74', '99', '84', '75', '86', '74', '53','251'],
+							symbolSize: 6,
+							data: dataConfirm,
 						},
 						{
 							type: 'line',
 							name: '累计死亡病例',
-							symbolSize: 8,
-							data: ['80', '120', '840', '750', '860', '740', '530','451'],
+							symbolSize: 6,
+							data: dataDead,
 						},
 						{
 							type: 'line',
 							name: '累计治愈病例',
-							symbolSize: 8,
-							data: ['800', '125', '840', '175', '600', '740', '253','124'],
+							symbolSize: 6,
+							data: dataHeal,
 						},
 					]
 				};
