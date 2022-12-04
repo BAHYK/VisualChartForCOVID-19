@@ -1,9 +1,5 @@
 function mc(result) {
-	console.log(result)
 
-
-
-	let map = new Map();
 	let list = [];
 	for (let i of result){
 		let mp = {};
@@ -18,125 +14,6 @@ function mc(result) {
 					return Math.round(Math.random() * 1200);
 				}
 				var mydata = list;
-				// var mydata = [{
-				// 	name: '内蒙古',
-				// 	value: {v1:123,v2:'456'}
-					/*, {
-						name: '天津',
-						value: randomData()
-					},
-					{
-						name: '上海',
-						value: randomData()
-					}, {
-						name: '重庆',
-						value: randomData()
-					},
-					{
-						name: '河北',
-						value: randomData()
-					}, {
-						name: '河南',
-						value: randomData()
-					},
-					{
-						name: '云南',
-						value: randomData()
-					}, {
-						name: '辽宁',
-						value: randomData()
-					},
-					{
-						name: '黑龙江',
-						value: randomData()
-					}, {
-						name: '湖南',
-						value: randomData()
-					}, {
-						name: '安徽',
-						value: randomData()
-					}, {
-						name: '山东',
-						value: randomData()
-					},
-					{
-						name: '新疆',
-						value: randomData()
-					}, {
-						name: '江苏',
-						value: randomData()
-					},
-					{
-						name: '浙江',
-						value: randomData()
-					}, {
-						name: '江西',
-						value: randomData()
-					},
-					{
-						name: '湖北',
-						value: randomData()
-					}, {
-						name: '广西',
-						value: randomData()
-					},
-					{
-						name: '甘肃',
-						value: randomData()
-					}, {
-						name: '山西',
-						value: randomData()
-					},
-					{
-						name: '内蒙古',
-						value: randomData()
-					}, {
-						name: '陕西',
-						value: randomData()
-					},
-					{
-						name: '吉林',
-						value: randomData()
-					}, {
-						name: '福建',
-						value: randomData()
-					},
-					{
-						name: '贵州',
-						value: randomData()
-					}, {
-						name: '广东',
-						value: randomData()
-					},
-					{
-						name: '青海',
-						value: randomData()
-					}, {
-						name: '西藏',
-						value: randomData()
-					},
-					{
-						name: '四川',
-						value: randomData()
-					}, {
-						name: '宁夏',
-						value: randomData()
-					},
-					{
-						name: '海南',
-						value: randomData()
-					}, {
-						name: '台湾',
-						value: randomData()
-					},
-					{
-						name: '香港',
-						value: randomData()
-					}, {
-						name: '澳门',
-						value: randomData()
-					}*/
-				// ];
 
 				var option = {
 					title: {
@@ -162,9 +39,10 @@ function mc(result) {
 							let nameX = params.name
 							// var index = $(params);
 							let values = map.get(nameX)
-							return `<div style="width: 180px;height: 180px;padding: 0;text-align: center;font-size:20px;">
+							return `<div style="width: 200px;height: 200px;padding: 0;text-align: center;font-size:18px;">
 										<span>${nameX}</span>
 										<span>现存病例：${values[0]}</span>
+										<span>治愈病例：${values[1]}</span>
 										<span>死亡病例：${values[2]}</span>
 									</div>`
 						}
@@ -191,7 +69,7 @@ function mc(result) {
 					geo: {
 						map: 'china',
 						show: true,
-						roam: true,
+						roam: false,
 						zoom: 1.3,
 						aspectScale: 0.8,
 						layoutCenter: ["50%", "50%"],

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>近30天数据分析</title>
+    <script src="/static/js/echarts.min.js"></script>
+</head>
+<body>
+<div style="width: 1920px;height: 950px;margin: 0 auto">
+    <div id="pie" style="width: 100%;height: 100%;"></div>
+</div>
+</body>
+<script>
+    pief();
+
+    function pief() {
+
+        let map = new Map([
+            ['北京', ['6815', '2366', '4']]
+        ])
+        let datas = map.get('北京')
+        let list = [{
+            value: parseFloat(datas[0]) - parseFloat(datas[1]) - parseFloat(datas[2]),
+            name: '当前确诊'
+        },
+            {
+                value: parseFloat(datas[1]),
+                name: '自愈病例'
+            },
+            {
+                value: parseFloat(datas[2]),
+                name: '死亡病例'
+            }
+        ]
+
+        var dom = document.getElementById("pie");
+        var myChart = echarts.init(dom);
+        var option = {
+            title: {
+                text: "近30天疫情数据分析",
+                x: 'center',
+                textStyle: {
+                    //文字颜色
+                    color: '#000000',
+                    //字体风格,'normal','italic','oblique'
+                    fontStyle: 'normal',
+                    //字体粗细 'normal','bold','bolder','lighter',100 | 200 | 300 | 400...
+                    fontWeight: 'bold',
+                    //字体系列
+                    fontFamily: 'sans-serif',
+                    //字体大小
+                    fontSize: 17
+                },
+            },
+            color: ['#ff0000', '#00ff00', '#d5d5d5'],
+            tooltip: {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+
+            legend: [{
+                selectedMode: true, // 图例选择的模式，控制是否可以通过点击图例改变系列的显示状态。默认开启图例选择，可以设成 false 关闭。
+                top: '5%',
+                left: 'center',
+                data: ['当前确诊', '自愈病例', '死亡病例']
+            }],
+            series: [{
+                name: '近30天疫情数据分析',
+                type: 'pie',
+                radius: ['50%', '70%'],
+                avoidLabelOverlap: false,
+                itemStyle: {
+                    barBorderRadius: 20,
+                    borderColor: '#000000',
+                    borderWidth: 5
+                },
+                label: {
+                    show: true,
+                    position: 'center',
+                },
+                emphasis: {
+                    label: {
+                        show: true,
+                        fontSize: '40',
+                        fontWeight: 'bold'
+                    }
+                },
+                labelLine: {
+                    show: false
+                },
+                data: list
+            }]
+        };
+
+        myChart.setOption(option);
+    }
+</script>
+</html>
